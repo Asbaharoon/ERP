@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DocumentsController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="216.0" style="-fx-background-color: #EBE8F9;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="144.0" fitWidth="216.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#overviewButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="OVERVIEW">
+               <graphic>
+                  <MaterialDesignIconView fill="#625261" glyphName="HOME" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#salesButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="SALES">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="ATTACH_MONEY" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#putchasesButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="PURCHASES">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="SHOPPING_CART" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#insightsButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="INSIGHTS">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="INSERT_CHART" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#taxButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="TAX REPORT">
+               <graphic>
+                  <FontAwesomeIconView fill="#625261" glyphName="MONEY" size="18" wrappingWidth="18.285715103149414" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#documentsButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #FFF;" text="DOCUMENTS">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="INSERT_CHART" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#accountButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="MY ACCOUNT">
+               <graphic>
+                  <FontAwesomeIconView fill="#625261" glyphName="USER_SECRET" size="18" wrappingWidth="18.428571701049805" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#signoutButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="SIGNOUT">
+               <graphic>
+                  <FontAwesomeIconView fill="#625261" glyphName="SIGN_OUT" size="18" wrappingWidth="18.714284896850586" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="285.0" layoutY="110.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: d9ecf2;" />
+      <AnchorPane layoutX="546.0" layoutY="110.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffeadb;" />
+      <AnchorPane layoutX="285.0" layoutY="365.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffe2e2;" />
+      <AnchorPane layoutX="546.0" layoutY="365.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e7dec8;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <children>
+      <Pane layoutX="-3.0" prefHeight="554.0" prefWidth="326.0" style="-fx-background-color: #cffffe;">
+         <children>
+            <Text fill="#333456" layoutX="20.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivering Powerful Business Solutions" textAlignment="CENTER" wrappingWidth="286.62890625">
+               <font>
+                  <Font name="Avenir Book Oblique" size="18.0" />
+               </font></Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="63.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/WhatsApp%20Image%202020-10-19%20at%204.39.39%20PM.jpeg" />
+               </image>
+            </ImageView>
+            <Label fx:id="tip_label" layoutX="22.0" layoutY="329.0" maxHeight="80.0" maxWidth="270.0" prefHeight="40.0" prefWidth="270.0" textAlignment="CENTER" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="324.0" prefHeight="554.0" prefWidth="377.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <TextField fx:id="TextField_email" layoutX="59.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateEmail" prefHeight="40.0" prefWidth="280.0" promptText="Username/Email" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #1b262c;" styleClass="textfielld">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="TextField_password" layoutX="59.0" layoutY="313.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="280.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #1b262c; -fx-border-width: 0px 0px 2px 0px;" styleClass="textfield" />
+            <Button layoutX="139.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#loginbtn" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #005086;" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <effect>
+                  <Glow level="0.74" />
+               </effect>
+            </Button>
+            <Label fx:id="email" layoutX="59.0" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" text="WELCOME" textFill="#2d4059">
+               <font>
+                  <Font name="SansSerif Regular" size="45.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Label fx:id="invaliEmailLabel" layoutX="144.0" layoutY="373.0" prefHeight="30.0" prefWidth="113.0" textFill="RED">
+               <font>
+                  <Font name="Times Roman" size="15.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="#005086" glyphName="EMAIL" layoutX="14.0" layoutY="278.0" size="40" />
+            <MaterialDesignIconView fill="#005086" glyphName="LOCK" layoutX="14.0" layoutY="348.0" size="40" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

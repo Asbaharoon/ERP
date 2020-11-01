@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TaxController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="216.0" style="-fx-background-color: #EBE8F9;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="144.0" fitWidth="216.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#overviewButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="OVERVIEW">
+               <graphic>
+                  <MaterialDesignIconView fill="#625261" glyphName="HOME" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#salesButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="SALES">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="ATTACH_MONEY" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#putchasesButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="PURCHASES">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="SHOPPING_CART" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#insightsButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="INSIGHTS">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="INSERT_CHART" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#taxButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #FFF;" text="TAX REPORT">
+               <graphic>
+                  <FontAwesomeIconView fill="#625261" glyphName="MONEY" size="18" wrappingWidth="18.285715103149414" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#documentsButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="DOCUMENTS">
+               <graphic>
+                  <MaterialIconView fill="#625261" glyphName="INSERT_CHART" size="18" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#accountButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: inherit;" text="MY ACCOUNT">
+               <graphic>
+                  <FontAwesomeIconView fill="#625261" glyphName="USER_SECRET" size="18" wrappingWidth="18.428571701049805" />
+               </graphic>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#signoutButtonClicked" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #EBE8F9;" text="SIGNOUT">
+               <graphic>
+                  <FontAwesomeIconView fill="#625261" glyphName="SIGN_OUT" size="18" wrappingWidth="18.714284896850586" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="255.0" layoutY="110.0" prefHeight="200.0" prefWidth="456.0" style="-fx-background-color: d9ecf2;">
+         <children>
+            <Label layoutX="41.0" layoutY="80.0" prefHeight="33.0" prefWidth="179.0" text="TOTAL PURCHASE :">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="113.0" prefHeight="33.0" prefWidth="179.0" text="TAX PAID   :">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="total_purchases" layoutX="257.0" layoutY="80.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="total_tax_paid" layoutX="257.0" layoutY="113.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="14.0" prefHeight="33.0" prefWidth="131.0" text="TOTAL SALES :">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="47.0" prefHeight="33.0" prefWidth="179.0" text="TAX COLLECTED  :">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="total_sales" layoutX="257.0" layoutY="14.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="total_tax" layoutX="257.0" layoutY="47.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="146.0" prefHeight="33.0" prefWidth="179.0" text="TAX DUE   :">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="tax_due" layoutX="257.0" layoutY="146.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="255.0" layoutY="355.0" prefHeight="169.0" prefWidth="456.0" style="-fx-background-color: #ffe2e2;">
+         <children>
+            <Label layoutX="177.0" layoutY="17.0" prefHeight="33.0" prefWidth="131.0" text="TAX RATES ">
+               <font>
+                  <Font name="Gill Sans" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="50.0" prefHeight="33.0" prefWidth="131.0" text="SGST">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="sgst" layoutX="243.0" layoutY="50.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="84.0" prefHeight="33.0" prefWidth="131.0" text="CGST">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="cgst" layoutX="243.0" layoutY="84.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="117.0" prefHeight="33.0" prefWidth="131.0" text="IGST">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="igst" layoutX="243.0" layoutY="117.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="150.0" prefHeight="33.0" prefWidth="131.0" text="CESS">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="cess" layoutX="243.0" layoutY="150.0" prefHeight="33.0" prefWidth="131.0">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Button layoutX="427.0" layoutY="318.0" mnemonicParsing="false" style="-fx-background-color: #9ad3bc;" text="Dues Paid">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <MaterialIconView fill="#193c27" glyphName="CHECK" size="20" />
+         </graphic>
+      </Button>
+      <Button layoutX="422.0" layoutY="547.0" mnemonicParsing="false" style="-fx-background-color: #f5b461;" text="MODIFY RATES">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
