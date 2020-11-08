@@ -15,32 +15,23 @@ import java.sql.Statement;
  * @author Dhanush
  */
 public class salesData {
-    static int invoices = 0;
-    static double total_sales = 0.0;
-    static double total_tax = 0.0;
+    static int invoices;
+    static double total_sales;
+    static double total_tax ;
     public static void getData_sales() throws SQLException{
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
-        String sql = "SELECT * from sales";
-        ResultSet rs    = stmt.executeQuery(sql);
-        if(rs.next()){
-            sql = "select count(id) from sales";
-            rs = stmt.executeQuery(sql);
+            String sql = "select count(id) from sales";
+            ResultSet rs = stmt.executeQuery(sql);
             rs.next();
             invoices = rs.getInt(1);
-            
             sql = "select sum(inv_value) from sales";
             rs = stmt.executeQuery(sql);
             rs.next();
             total_sales = rs.getDouble(1);
-            
-            
             sql = "select sum(tax) from sales";
             rs = stmt.executeQuery(sql);
             rs.next();
             total_tax = rs.getDouble(1);
-            
         }
-                
-    }
 }

@@ -16,32 +16,26 @@ import java.sql.Statement;
  * @author Dhanush
  */
 public class PurchaseData {
-    static int orders = 0;
-    static double total_purchase = 0.0;
-    static double tax_paid = 0.0;
+    static int orders;
+    static double total_purchase;
+    static double tax_paid;
+    static double totalTaxPaid;
+    static double SumTotalPurchase;
+    static double tax_due;
     public static void getDataPurchase() throws SQLException{
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
-        String sql = "SELECT * from purchase";
-        ResultSet rs    = stmt.executeQuery(sql);
-        if(rs.next()){
-            sql = "select count(id) from sales";
-            rs = stmt.executeQuery(sql);
-            rs.next();
-            orders = rs.getInt(1);
-            
-            sql = "select sum(inv_value) from sales";
-            rs = stmt.executeQuery(sql);
-            rs.next();
-            total_purchase = rs.getDouble(1);
-            
-            
-            sql = "select sum(tax) from sales";
-            rs = stmt.executeQuery(sql);
-            rs.next();
-            tax_paid = rs.getDouble(1);
-            
+        String sql = "select count(order_id) from purchase";
+        ResultSet rs = stmt.executeQuery(sql);
+        rs.next();
+        orders = rs.getInt(1);
+        sql = "select sum(indiv_value) from purchase";
+        rs = stmt.executeQuery(sql);
+        rs.next();
+        SumTotalPurchase = rs.getDouble(1);
+        sql = "select sum(tax_paid) from purchase";
+        rs = stmt.executeQuery(sql);
+        rs.next();
+        totalTaxPaid = rs.getDouble(1);
         }
-                
     }
-}

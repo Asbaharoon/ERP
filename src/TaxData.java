@@ -15,22 +15,27 @@ import java.sql.Statement;
  * @author Dhanush
  */
 public class TaxData {
-    static double tax_due;
     static double sgst;
     static double cgst;
     static double igst;
     static double cess;
+    static double taxCol;
+    static double tax_due;
     public static void getTaxData() throws SQLException{
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
         String sql = "SELECT * from tax";
         ResultSet rs    = stmt.executeQuery(sql);
-        if(rs.next()){
-            tax_due = rs.getDouble("tax_due");
+        rs.next();
             sgst = rs.getDouble("sgst");
             cgst = rs.getDouble("cgst");
             igst = rs.getDouble("igst");
             cess = rs.getDouble("cess");
-        }
-}
+            taxCol = rs.getDouble("taxcol");
+        salesData.getData_sales();
+        PurchaseData.getDataPurchase();
+        tax_due = salesData.total_tax - PurchaseData.totalTaxPaid - taxCol;
+    }
+    
+    
 }

@@ -6,8 +6,12 @@
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -75,7 +79,6 @@ public class TaxController implements Initializable {
         igst.setText(String.valueOf(TaxData.igst));
         cess.setText(String.valueOf(TaxData.cess));
         tax_due.setText(String.valueOf(TaxData.tax_due));
-        // TODO
     }    
 @FXML
     private void overviewButtonClicked(MouseEvent event) throws IOException {
@@ -179,5 +182,44 @@ public class TaxController implements Initializable {
         window.setScene(scene);
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
+    }
+
+    @FXML
+    private void modifyRates(MouseEvent event) throws IOException {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+        Stage window = new Stage();
+        Parent root;
+        root = FXMLLoader.load(getClass().getResource("ModifyTaxRates.fxml"));
+        Scene scene = new Scene(root);
+        window.setScene(scene);
+        window.initStyle(StageStyle.UNDECORATED);
+        window.show();
+    }
+
+    @FXML
+    private void duesPaid(MouseEvent event) throws SQLException {
+        TaxData.taxCol = TaxData.taxCol+TaxData.tax_due;
+        Connection conn = MySQLJDBCUtil.getConnection();
+        Statement stmt  = conn.createStatement();
+        String sql = "UPDATE purchase set tax_paid = "+PurchaseData.tax_paid;
+        stmt.executeUpdate(sql);
+        TaxData.tax_due = 0;
+        sql = "UPDATE tax set taxcol = "+TaxData.taxCol;
+        stmt.executeUpdate(sql);
+        try {
+                    Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+                    stage.close();
+                    Stage window = new Stage();
+                    Parent root;
+                    SuccessMessageDisplayController.message = "Thankyou for being a wonderful citizen.";
+                    root = FXMLLoader.load(getClass().getResource("SuccessMessageDisplay.fxml"));
+                    Scene scene = new Scene(root);
+                    window.setScene(scene);
+                    window.initStyle(StageStyle.UNDECORATED);
+                    window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ModifyTaxRatesController.class.getName()).log(Level.SEVERE, null, ex);
+        }   
     }
 }

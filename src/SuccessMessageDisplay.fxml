@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="210.0" prefWidth="370.0" style="-fx-background-color: #fce2ce;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuccessMessageDisplayController">
+   <children>
+      <Text fill="#197163" layoutX="132.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUCCESS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <MaterialIconView fill="#065446" glyphName="CHECK_CIRCLE" layoutX="101.0" layoutY="61.0" size="24" />
+      <Button layoutX="153.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#exitButton" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #4ea0ae;" text="OK!">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Label fx:id="successMessage" alignment="CENTER" layoutX="22.0" layoutY="74.0" prefHeight="56.0" prefWidth="327.0" style="-fx-text-alignment: center;" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

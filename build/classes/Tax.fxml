@@ -163,7 +163,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Button layoutX="427.0" layoutY="318.0" mnemonicParsing="false" style="-fx-background-color: #9ad3bc;" text="Dues Paid">
+      <Button layoutX="427.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#duesPaid" style="-fx-background-color: #9ad3bc;" text="Dues Paid">
          <font>
             <Font size="15.0" />
          </font>
@@ -171,7 +171,7 @@
             <MaterialIconView fill="#193c27" glyphName="CHECK" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="422.0" layoutY="547.0" mnemonicParsing="false" style="-fx-background-color: #f5b461;" text="MODIFY RATES">
+      <Button layoutX="422.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#modifyRates" style="-fx-background-color: #f5b461;" text="MODIFY RATES">
          <font>
             <Font size="15.0" />
          </font>

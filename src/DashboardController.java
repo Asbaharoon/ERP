@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -24,12 +26,48 @@ import javafx.stage.StageStyle;
  */
 public class DashboardController implements Initializable {
 
+    @FXML
+    private Label invoice_no;
+    @FXML
+    private Label total_sales;
+    @FXML
+    private Label total_tax;
+    @FXML
+    private Label orders;
+    @FXML
+    private Label total_purchases;
+    @FXML
+    private Label total_tax_paid;
+    @FXML
+    private Label tax_due;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            salesData.getData_sales();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        invoice_no.setText(String.valueOf(salesData.invoices));
+        total_sales.setText(String.valueOf(salesData.total_sales));
+        total_tax.setText(String.valueOf(salesData.total_tax));
+        try {
+            PurchaseData.getDataPurchase();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        orders.setText(String.valueOf(PurchaseData.orders));
+        total_tax_paid.setText(String.valueOf(PurchaseData.tax_paid));
+        total_purchases.setText(String.valueOf(PurchaseData.total_purchase));
+        try {
+            TaxData.getTaxData();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        tax_due.setText(String.valueOf(TaxData.tax_due));
     }    
 
     @FXML
