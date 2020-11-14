@@ -80,8 +80,6 @@ public class LoginController implements Initializable {
                 String aid = rs.getString("aid");
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");  
                 Date date = new Date();
-                sql = "update accounts set datelogin = \""+formatter.format(date)+"\"where aid=\""+aid+"\"";
-                stmt.executeUpdate(sql);
                 Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
                 stage.close();
                 Stage window = new Stage();

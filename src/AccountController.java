@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -170,5 +172,79 @@ public class AccountController implements Initializable {
         window.setScene(scene);
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
+    }
+
+    @FXML
+    private void updateUser(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("UpdateDetails.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void changePassword(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("ChangePassword.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void newAccount(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("NewAccount.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void modiyAccount(MouseEvent event) {
+    }
+
+    @FXML
+    private void removeAccount(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("DeleteAccount.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

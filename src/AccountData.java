@@ -16,7 +16,7 @@ import java.sql.Statement;
  * @author Dhanush
  */
 public class AccountData {
-    static String aid,name,email,role,company;
+    static String aid,name,email,role,company,password;
     public static void getAccountData() throws SQLException{
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
@@ -28,6 +28,7 @@ public class AccountData {
              email = rs.getString("email");
              role = rs.getString("acc_role");
              company = rs.getString("company");
+             password = rs.getString("pass");
         }
 }
     
