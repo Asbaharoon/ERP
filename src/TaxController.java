@@ -69,8 +69,8 @@ public class TaxController implements Initializable {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        total_tax_paid.setText(String.valueOf(PurchaseData.tax_paid));
-        total_purchases.setText(String.valueOf(PurchaseData.total_purchase));
+        total_tax_paid.setText(String.valueOf(PurchaseData.totalTaxPaid));
+        total_purchases.setText(String.valueOf(PurchaseData.SumTotalPurchase));
         total_sales.setText(String.valueOf(salesData.total_sales));
         total_tax.setText(String.valueOf(salesData.total_tax));
         sgst.setText(String.valueOf(TaxData.sgst));
@@ -202,10 +202,8 @@ public class TaxController implements Initializable {
         TaxData.taxCol = TaxData.taxCol+TaxData.tax_due;
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
-        String sql = "UPDATE purchase set tax_paid = "+PurchaseData.tax_paid;
-        stmt.executeUpdate(sql);
         TaxData.tax_due = 0;
-        sql = "UPDATE tax set taxcol = "+TaxData.taxCol;
+        String sql = "UPDATE tax set taxcol = "+TaxData.taxCol;
         stmt.executeUpdate(sql);
         try {
                     Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();

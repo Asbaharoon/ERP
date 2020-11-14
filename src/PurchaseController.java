@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -44,8 +46,8 @@ public class PurchaseController implements Initializable {
             System.out.println(ex);
         }
         orders.setText(String.valueOf(PurchaseData.orders));
-        total_tax_paid.setText(String.valueOf(PurchaseData.tax_paid));
-        total_purchases.setText(String.valueOf(PurchaseData.total_purchase));
+        total_tax_paid.setText(String.valueOf(PurchaseData.totalTaxPaid));
+        total_purchases.setText(String.valueOf(PurchaseData.SumTotalPurchase));
         
     }    
 
@@ -151,5 +153,74 @@ public class PurchaseController implements Initializable {
         window.setScene(scene);
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
+    }
+
+    @FXML
+    private void editPurchase(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("ModifyPurchase.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PurchaseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void newPurchase(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("NewPurchase.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PurchaseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void viewPurchase(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("ViewPurchase.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PurchaseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void removePurchase(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("DeletePurchase.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PurchaseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

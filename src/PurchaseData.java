@@ -17,11 +17,8 @@ import java.sql.Statement;
  */
 public class PurchaseData {
     static int orders;
-    static double total_purchase;
-    static double tax_paid;
     static double totalTaxPaid;
     static double SumTotalPurchase;
-    static double tax_due;
     public static void getDataPurchase() throws SQLException{
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
@@ -29,7 +26,7 @@ public class PurchaseData {
         ResultSet rs = stmt.executeQuery(sql);
         rs.next();
         orders = rs.getInt(1);
-        sql = "select sum(indiv_value) from purchase";
+        sql = "select sum(total_value) from purchase";
         rs = stmt.executeQuery(sql);
         rs.next();
         SumTotalPurchase = rs.getDouble(1);

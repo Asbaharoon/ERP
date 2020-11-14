@@ -153,4 +153,72 @@ public class SalesController implements Initializable {
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
     }
+
+    @FXML
+    private void editSales(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("ModifySales.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SalesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void newSales(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("NewSales.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SalesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void viewSales(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("ViewSales.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SalesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void removeSales(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("DeleteSalesRecord.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SalesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

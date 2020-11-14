@@ -3,19 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/AccountData.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/NewAccount.fxml</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/SuccessMessageDisplayController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/UpdateDetailsController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/AccountController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/ChangePassword.fxml</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/ChangePasswordController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/LoginController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/DeleteAccount.fxml</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/ModifyTaxRatesController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/NewAccountController.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/TaxData.java</file>
-            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/DeleteAccountController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/TableDataPurchase.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/salesData.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/DeletePurchase.fxml</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/DeletePurchaseController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/ViewPurchaseController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/PurchaseController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/TaxController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/Insights.fxml</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/DeleteSalesRecordController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/InsightsController.java</file>
+            <file>file:/Users/Dhanush/NetBeansProjects/ERPM/src/DocumentsController.java</file>
         </group>
     </open-files>
 </project-private>

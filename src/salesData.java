@@ -25,7 +25,7 @@ public class salesData {
             ResultSet rs = stmt.executeQuery(sql);
             rs.next();
             invoices = rs.getInt(1);
-            sql = "select sum(inv_value) from sales";
+            sql = "select sum(total_value) from sales";
             rs = stmt.executeQuery(sql);
             rs.next();
             total_sales = rs.getDouble(1);

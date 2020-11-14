@@ -64,18 +64,18 @@
       </VBox>
       <AnchorPane layoutX="275.0" layoutY="396.0" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: d9ecf2;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="Edit Sales">
+            <Button mnemonicParsing="false" onMouseClicked="#editSales" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="Edit Sales">
                <font>
                   <Font name="Gill Sans SemiBold" size="20.0" />
                </font>
                <graphic>
-                  <MaterialIconView fill="#74a3f5" glyphName="EDIT" size="24" />
+                  <MaterialIconView fill="#74a3f5" glyphName="EDIT" onMouseEntered="#editSales" size="24" />
                </graphic>
             </Button>
          </children></AnchorPane>
       <AnchorPane layoutX="275.0" layoutY="270.0" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: #ffe2e2;">
          <children>
-            <Button layoutY="1.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="New Sales">
+            <Button layoutY="1.0" mnemonicParsing="false" onMouseClicked="#newSales" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="New Sales">
                <graphic>
                   <MaterialIconView fill="#a44848" glyphName="ADD_CIRCLE" size="24" />
                </graphic>
@@ -86,7 +86,7 @@
          </children></AnchorPane>
       <AnchorPane layoutX="511.0" layoutY="270.0" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: #e7dec8;">
          <children>
-            <Button layoutY="5.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="View Sales">
+            <Button layoutY="5.0" mnemonicParsing="false" onMouseClicked="#viewSales" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="View Sales">
                <font>
                   <Font name="Gill Sans SemiBold" size="20.0" />
                </font>
@@ -97,7 +97,7 @@
          </children></AnchorPane>
       <AnchorPane layoutX="509.0" layoutY="396.0" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: #d2f5e3;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="Remove">
+            <Button mnemonicParsing="false" onMouseClicked="#removeSales" prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="Remove">
                <font>
                   <Font name="Gill Sans SemiBold" size="20.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Font name="Gill Sans" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="55.0" layoutY="14.0" prefHeight="33.0" prefWidth="131.0" text="INVOICES       :">
+            <Label layoutX="55.0" layoutY="19.0" prefHeight="33.0" prefWidth="131.0" text="INVOICES       :">
                <font>
                   <Font name="Gill Sans" size="19.0" />
                </font>

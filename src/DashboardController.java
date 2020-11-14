@@ -60,8 +60,8 @@ public class DashboardController implements Initializable {
             System.out.println(ex);
         }
         orders.setText(String.valueOf(PurchaseData.orders));
-        total_tax_paid.setText(String.valueOf(PurchaseData.tax_paid));
-        total_purchases.setText(String.valueOf(PurchaseData.total_purchase));
+        total_tax_paid.setText(String.valueOf(PurchaseData.totalTaxPaid));
+        total_purchases.setText(String.valueOf(PurchaseData.SumTotalPurchase));
         try {
             TaxData.getTaxData();
         } catch (SQLException ex) {
