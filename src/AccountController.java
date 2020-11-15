@@ -170,7 +170,6 @@ public class AccountController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root);
         window.setScene(scene);
-        window.initStyle(StageStyle.UNDECORATED);
         window.show();
     }
 
@@ -225,10 +224,6 @@ public class AccountController implements Initializable {
             Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }
-
-    @FXML
-    private void modiyAccount(MouseEvent event) {
     }
 
     @FXML

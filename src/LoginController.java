@@ -48,6 +48,8 @@ public class LoginController implements Initializable {
     private Label invaliEmailLabel;
     @FXML
     public Label tip_label;
+    @FXML
+    private Label usernamePass;
 
     /**
      * Initializes the controller class.
@@ -56,10 +58,12 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         tip_label.setText(Main.tips[0]);
+        usernamePass.setVisible(false);
     }    
 
     @FXML
     private void validateEmail(KeyEvent event) {
+        usernamePass.setVisible(false);
         String email = TextField_email.getText();
         if(isValid(email))
             invaliEmailLabel.setText("");
@@ -70,9 +74,11 @@ public class LoginController implements Initializable {
     @FXML
     private void loginbtn(MouseEvent event) throws IOException, ClassNotFoundException, SQLException {
         String email =TextField_email.getText();
+        usernamePass.setVisible(false);
         String password = TextField_password.getText();
         Connection conn = MySQLJDBCUtil.getConnection();
         if(isValid(email)){
+            usernamePass.setVisible(false);
             Statement stmt  = conn.createStatement();
             String sql = "SELECT * from accounts where email=\""+email.toLowerCase()+"\" and pass=\""+password+"\"";
             ResultSet rs    = stmt.executeQuery(sql);
@@ -92,7 +98,11 @@ public class LoginController implements Initializable {
 
             }
             else
+
             {
+                usernamePass.setVisible(true);
+                TextField_email.setText("");
+                TextField_password.setText("");
                 System.out.println("Incorrect email or password");
             }
             
@@ -100,6 +110,7 @@ public class LoginController implements Initializable {
     }
     public static boolean isValid(String email)
     {
+
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +

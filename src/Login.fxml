@@ -25,7 +25,7 @@
                </font></Text>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="63.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WhatsApp%20Image%202020-10-19%20at%204.39.39%20PM.jpeg" />
+                  <Image url="@images/WhatsApp%20Image%202020-10-19%20at%204.39.39%20PM.jpeg"/>
                </image>
             </ImageView>
             <Label fx:id="tip_label" layoutX="22.0" layoutY="329.0" maxHeight="80.0" maxWidth="270.0" prefHeight="40.0" prefWidth="270.0" textAlignment="CENTER" />
@@ -66,6 +66,11 @@
             </Label>
             <MaterialDesignIconView fill="#005086" glyphName="EMAIL" layoutX="14.0" layoutY="278.0" size="40" />
             <MaterialDesignIconView fill="#005086" glyphName="LOCK" layoutX="14.0" layoutY="348.0" size="40" />
+            <Label fx:id="usernamePass" layoutX="95.0" layoutY="457.0" text="Incorrect Username/Password" textFill="RED">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
          <effect>
             <DropShadow />

@@ -106,7 +106,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Button fx:id="newAcc" layoutX="263.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#newAccount" style="-fx-background-color: #d6d2c4;" text="New Account">
+      <Button fx:id="newAcc" layoutX="329.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#newAccount" style="-fx-background-color: #d6d2c4;" text="New Account">
          <graphic>
             <MaterialIconView glyphName="PERSON_ADD" size="14" />
          </graphic>
@@ -114,15 +114,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="modAcc" layoutX="427.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#modiyAccount" style="-fx-background-color: #d6d2c4;" text="Modify Account">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <MaterialIconView glyphName="TRACK_CHANGES" />
-         </graphic>
-      </Button>
-      <Button fx:id="remAcc" layoutX="599.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#removeAccount" style="-fx-background-color: #d6d2c4;" text="Remove Account">
+      <Button fx:id="remAcc" layoutX="522.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#removeAccount" style="-fx-background-color: #d6d2c4;" text="Remove Account">
          <graphic>
             <MaterialIconView glyphName="REMOVE" size="14" />
          </graphic>

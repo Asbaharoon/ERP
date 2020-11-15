@@ -24,6 +24,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -228,9 +230,8 @@ public class DocumentsController implements Initializable {
                 table.addCell(cell8);
             }
         }
-        else
-        {
-            PdfWriter.getInstance(document,new FileOutputStream(dest+"purchase.pdf"));
+        else{
+
             Connection conn = MySQLJDBCUtil.getConnection();
             Statement stmt  = conn.createStatement();
             String sql = "SELECT * from purchase";
@@ -276,18 +277,46 @@ public class DocumentsController implements Initializable {
         document.add(new Paragraph("\n"));
         Image image = Image.getInstance("/Users/Dhanush/NetBeansProjects/ERPM/src/images/logo.png");
         image.setAlignment(1);
+        Paragraph space = new Paragraph("\n");
+        document.add(space);
+        document.add(space);
         document.add(image);
+        document.add(space);
         Paragraph paragraph = new Paragraph("Enterprise Resource Planning Management System",FontFactory.getFont(FontFactory.TIMES, 32f));
         paragraph.setAlignment(1);
         paragraph.setPaddingTop(50);
         document.add(paragraph);
+        document.add(space);
+        document.add(space);
         document.add(table);
         document.close();
-        System.out.println("ITEXT PDF Executed");
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+        Stage window = new Stage();
+        Parent root;
+        SuccessMessageDisplayController.message = "New PDF Created at Desktop/pdf";
+        root = FXMLLoader.load(getClass().getResource("SuccessMessageDisplay.fxml"));
+        Scene scene = new Scene(root);
+        window.setScene(scene);
+        window.initStyle(StageStyle.UNDECORATED);
+        window.show();
     }
 
     @FXML
     private void back(MouseEvent event) {
+        try {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            Stage window = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+            Scene scene = new Scene(root);
+            window.setScene(scene);
+            window.initStyle(StageStyle.UNDECORATED);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ModifyTaxRatesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

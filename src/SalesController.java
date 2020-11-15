@@ -150,7 +150,6 @@ public class SalesController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root);
         window.setScene(scene);
-        window.initStyle(StageStyle.UNDECORATED);
         window.show();
     }
 
