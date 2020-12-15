@@ -84,7 +84,6 @@ public class NewSalesController implements Initializable {
 
     @FXML
     private void calculateTax(MouseEvent event) throws SQLException {
-        
         id = inInput.getText();
         date = String.valueOf(dateInput.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         to = toInput.getText();

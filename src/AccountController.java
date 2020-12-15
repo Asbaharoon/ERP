@@ -58,15 +58,7 @@ public class AccountController implements Initializable {
         role.setText(String.valueOf(AccountData.role));
         if("admin".equals(AccountData.role)){
             System.out.println("admin");    
-    }    else
-        {
-            newAcc.setVisible(false);
-            newAcc.disableProperty();
-            modAcc.setVisible(false);
-            modAcc.disableProperty();
-            remAcc.setVisible(false);
-            modAcc.disableProperty();
-        }
+    }
         
 }
 

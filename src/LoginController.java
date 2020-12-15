@@ -83,6 +83,7 @@ public class LoginController implements Initializable {
             String sql = "SELECT * from accounts where email=\""+email.toLowerCase()+"\" and pass=\""+password+"\"";
             ResultSet rs    = stmt.executeQuery(sql);
             if(rs.next()){
+                AccountData.email = email;
                 String aid = rs.getString("aid");
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");  
                 Date date = new Date();

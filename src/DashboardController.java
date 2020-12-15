@@ -40,6 +40,8 @@ public class DashboardController implements Initializable {
     private Label total_tax_paid;
     @FXML
     private Label tax_due;
+    @FXML
+    private Label govt;
 
     /**
      * Initializes the controller class.
@@ -68,6 +70,7 @@ public class DashboardController implements Initializable {
             System.out.println(ex);
         }
         tax_due.setText(String.valueOf(TaxData.tax_due));
+        govt.setText(String.valueOf(TaxData.taxCol));
     }    
 
     @FXML

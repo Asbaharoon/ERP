@@ -20,7 +20,7 @@ public class AccountData {
     public static void getAccountData() throws SQLException{
         Connection conn = MySQLJDBCUtil.getConnection();
         Statement stmt  = conn.createStatement();
-        String sql = "SELECT * from accounts";
+        String sql = "SELECT * from accounts where email=\""+email+"\"";
         ResultSet rs    = stmt.executeQuery(sql);
         if(rs.next()){
              aid = rs.getString("aid");
